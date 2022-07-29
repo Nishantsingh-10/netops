@@ -37,8 +37,8 @@ WorkerClusters:
   NodeIP: ${IP2}
 WorkerChartOptions:
   SetStrValues:
-    "operator.image": "netops"
-    "operator.tag": "e2e-latest"
+    "netop.image": "netops"
+    "netop.tag": "e2e-latest"
 TestSuitesEnabled:
   HubSuite: true
   WorkerSuite: true
