@@ -7,10 +7,6 @@ jobs:
   end-to-end:
     runs-on: ubuntu-20.04
     steps:
-    - name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d  %H:%M:%S')"
-      
     - name: checkout the repo
       uses: actions/checkout@v3
       with:
@@ -55,7 +51,7 @@ jobs:
         gh_pages: gh-pages
         keep_reports: 30
         github_run_id: '${{ github.run_id }}'
-        github_run_num: 'Kind-${{ github.event.repository.name }}-${{ github.base_ref }}-${{ github.run_number }}-${{ steps.date.outputs.date }}'
+        github_run_num: 'Kind-${{ github.event.repository.name }}-${{ github.base_ref }}-${{ github.run_number }}'
         report_url: 'https://kubeslice.github.io/e2e-allure-reports/'
         test_env: Kind
           
